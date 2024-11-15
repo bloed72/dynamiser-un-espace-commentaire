@@ -28,4 +28,17 @@ form.addEventListener('submit', function(e){
         errorMsg.style.display='none';
     }
 
+    let list = document.getElementById("comment-list");
+    let newCom = list.children[2].cloneNode(true);
+    let userName = newCom.querySelector("h3");
+
+    userName.innerText=firstName.value + " " + lastName.value;
+
+    let newMsg = newCom.querySelector("p");
+
+    newMsg.innerText = comment.value;
+
+    list.appendChild(newCom);
+
+    form.reset();
 })
